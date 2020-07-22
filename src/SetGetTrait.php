@@ -50,7 +50,7 @@ trait SetGetTrait
             return null;
         }
 
-        if ($action === 'get' && (!$propertyAnnotation || ($propertyAnnotation && $propertyAnnotation->get))) {
+        if ($action === 'get') {
             return $this->getPropertyValue($property, $reflectionProperty, $propertyAnnotation);
         }
 
