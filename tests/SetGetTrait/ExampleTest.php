@@ -36,4 +36,28 @@ final class ExampleTest extends TestCase
 
         $example->getUsername();
     }
+
+    public function testUndefinedMethod(): void
+    {
+        $this->expectExceptionMessage('Call to undefined method "testMethod"');
+        $example = new Example();
+
+        $example->testMethod();
+    }
+
+    public function testGetNameError(): void
+    {
+        $this->expectExceptionMessage('Permission error, property "name" is write only');
+        $example = new Example();
+
+        $example->getName();
+    }
+
+    public function testSetSurnameError(): void
+    {
+        $this->expectExceptionMessage('Permission error, property "surname" is read only');
+        $example = new Example();
+
+        $example->setSurname('test');
+    }
 }

@@ -30,13 +30,13 @@ final class Example
 
     /**
      * @var string
-     * @Property(set=true)
+     * @Property(set=true, get=false)
      */
     private $name;
 
     /**
      * @var string|null
-     * @Property(get=true)
+     * @Property(get=true, set=false)
      */
     private $surname;
 }
