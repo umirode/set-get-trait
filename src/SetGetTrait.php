@@ -54,7 +54,7 @@ trait SetGetTrait
             return $this->getPropertyValue($property, $reflectionProperty, $propertyAnnotation);
         }
 
-        return null;
+        throw new SetGetError('Call to undefined method "' . $name . '()"');
     }
 
     /**
