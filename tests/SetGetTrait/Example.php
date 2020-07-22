@@ -13,10 +13,16 @@ use Umirode\SetGetTrait\SetGetTrait;
  *
  * @method string getUsername()
  * @method string setUsername(string $username)
- *
  * @method string setName(string $name)
- *
  * @method string getSurname()
+ *
+ * Methods for tests
+ * @method testMethod()
+ * @method getName()
+ * @method setEmptyDoc(string $string)
+ * @method setSurname(string $string)
+ * @method setSetSet(string $string)
+ * @method getEmptyDoc(string $string)
  */
 final class Example
 {
