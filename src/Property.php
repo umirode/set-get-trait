@@ -18,11 +18,15 @@ final class Property
 {
     /**
      * @var bool
+     *
+     * @Required()
      */
     public $get = true;
 
     /**
      * @var bool
+     *
+     * @Required()
      */
     public $set = true;
 }

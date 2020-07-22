@@ -39,4 +39,12 @@ final class Example
      * @Property(get=true, set=false)
      */
     private $surname;
+
+    private $emptyDoc;
+
+    /**
+     * @var string
+     * @Property(get=true, set=true)
+     */
+    private $setSetTest;
 }

@@ -60,4 +60,20 @@ final class ExampleTest extends TestCase
 
         $example->setSurname('test');
     }
+
+    public function testEmptyDoc(): void
+    {
+        $example = new Example();
+
+        $example->setEmptyDoc('test');
+        self::assertEquals('test', $example->getEmptyDoc('test'));
+    }
+
+    public function testSetSetName(): void
+    {
+        $this->expectExceptionMessage('Property "setSet" not exists');
+        $example = new Example();
+
+        $example->setSetSet('test');
+    }
 }
