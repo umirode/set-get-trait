@@ -189,12 +189,18 @@ trait SetGetTrait
     }
 
     /**
-     * @param ReflectionProperty $property
+     * @param ReflectionProperty $reflectionProperty
      * @return Property
      * @throws AnnotationException
+     * @throws SetGetError
      */
-    private function getPropertyAnnotation(ReflectionProperty $property): Property
+    private function getPropertyAnnotation(ReflectionProperty $reflectionProperty): Property
     {
-        return (new AnnotationReader())->getPropertyAnnotation($property, Property::class) ?? new Property();
+        $propertyAnnotation = (new AnnotationReader())->getPropertyAnnotation($reflectionProperty, Property::class);
+        if ($propertyAnnotation === null) {
+            throw new SetGetError('Please define @Property for "' . $reflectionProperty->getName() . '"');
+        }
+
+        return $propertyAnnotation;
     }
 }

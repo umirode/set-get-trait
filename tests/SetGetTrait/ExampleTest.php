@@ -63,10 +63,10 @@ final class ExampleTest extends TestCase
 
     public function testEmptyDoc(): void
     {
+        $this->expectExceptionMessage('Please define @Property for "emptyDoc"');
         $example = new Example();
 
         $example->setEmptyDoc('test');
-        self::assertEquals('test', $example->getEmptyDoc('test'));
     }
 
     public function testSetSetName(): void
